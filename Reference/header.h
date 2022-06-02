@@ -57,8 +57,6 @@ int get_value4(const int & d)
 
 int & get_value5(int & e)
 {
-    
-    // d+=100000; //d is declared as constant so it is a read-only value, not modifyable
 
     return e;
 
@@ -66,8 +64,6 @@ int & get_value5(int & e)
 
 int & get_value6(int * & f)
 {
-    
-    // d+=100000; //d is declared as constant so it is a read-only value, not modifyable
 
     return *f;
 

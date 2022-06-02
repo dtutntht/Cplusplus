@@ -5,8 +5,8 @@
 
 using namespace std; 
 
-// void reference_variable();
-// void reference_parameter();
+void reference_variable();
+void reference_parameter();
 void reference_returned();
 
 int main ()
@@ -15,7 +15,7 @@ int main ()
     cout << "hello world" << endl;
 
     // reference_variable();
-    //reference_parameter();
+    reference_parameter();
     reference_returned();
 
     Sleep(1000000); // sleep for 1000 sec to check the result on external terminal
@@ -89,7 +89,7 @@ void reference_returned()
 
     int E = 100;
     cout << "before modified E = " << E << endl;
-        // EE is the reference of the "get_value6()" function, and this function is the reference of E
+    // EE is the reference of the "get_value6()" function, and this function is the reference of E
     // So when I modified E value, print FF will get same value as E due to they are eventually the same value "E" at same memory address
     int & EE = get_value5(E);
     E = 99;

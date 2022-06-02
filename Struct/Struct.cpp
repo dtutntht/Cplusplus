@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string.h>
 #include <windows.h>
+#include "header.h"
 
 using namespace std; 
 void cellphone ();
@@ -26,7 +27,7 @@ typedef struct cellphone2{
 
 int main ()
 {
-    
+    /*
     cout << "hello world" << endl;
     cout << endl;
     cout << "Normal struct : " << endl;
@@ -42,7 +43,63 @@ int main ()
     samsung_struct S20; // Try the typeset
     S20.brand = "Samsung";
     cout << S20.brand << endl;
+    */
+    const circle a{
+        .radius=10,
+        .height=100
+    };
 
+    
+
+    circle cir1;
+
+    distribute_value (cir1,10,50);
+    cout << cir1.height << endl;
+    cout << cir1.radius << endl;
+    cout << &cir1 << endl;;
+
+    cout << "######################" << endl;
+
+    circle cir2;
+
+    copy_circle(cir1,cir2);
+    cout << cir2.height << endl;
+    cout << cir2.radius << endl;
+    cout << &cir2 << endl;;
+
+    cout << "######################" << endl;
+
+    circle * cir3 = new circle;
+    copy_circle_pointer(&cir1,cir3);
+    cout << cir3->height << endl;
+    cout << cir3->radius << endl;
+    cout << &cir3 << endl;
+    
+    cout << "######################" << endl;
+    
+    circle * cir4 = new circle;
+    // "&cir1" is a right value (rvalue), which mean this value is an temporary value and no related address
+    // if we can set rvalue as value of argument in function, if we
+    circle * cir1_adr = &cir1;
+    copy_circle_pointer_ref(cir1_adr,cir4); 
+    cout << cir4->height << endl;
+    cout << cir4->radius << endl;
+    cout << &cir4 << endl;
+
+    cout << "######################" << endl;
+
+    circle * cir5 = new circle;
+    // Use the new circle presented as "pointer *cir5" to implement next execution.
+    cir5 = copy_circle_pointer_return(&cir1, cir5);
+    cout << "area of cir5 : " << cal_area(cir5, cir5->radius) << endl;
+    // also can do -->   cout << "area of cir5 : " << cal_area(copy_circle_pointer_return(&cir1, cir5) , copy_circle_pointer_return(&cir1, cir5)->radius) << endl;
+    cout << cir5->height << endl;
+    cout << cir5->radius << endl;
+    cout << &cir5 << endl;
+
+    
+
+    
     
     Sleep(1000000); // sleep for 1000 sec to check the result on external terminal
 }
@@ -108,3 +165,7 @@ void cell_pointer ()
     
 
 }
+
+
+
+
