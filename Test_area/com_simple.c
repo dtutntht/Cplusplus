@@ -7,7 +7,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <time.h>
-#include <termios.h>
+#include "termios.h"
 //#include <linux/termios.h>
 
 int set_opt(int fd,int nSpeed, int nBits, char nEvent, int nStop)
