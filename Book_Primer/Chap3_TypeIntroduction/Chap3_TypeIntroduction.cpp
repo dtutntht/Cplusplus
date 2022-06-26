@@ -7,7 +7,8 @@
 
 void CheckLimit();
 void CheckCarry();
-
+void CheckChar();
+void Exercise();
 using namespace std; 
 
 int main(){
@@ -17,7 +18,10 @@ int main(){
     CheckLimit();
     cout << "-------------------------------------" << endl;
     CheckCarry();
-
+    cout << "-------------------------------------" << endl;
+    CheckChar();
+    cout << "-------------------------------------" << endl;
+    Exercise();
     sleep(1000);
 }
 
@@ -65,4 +69,42 @@ void CheckCarry(){
     cout << dec;
     cout << "42 in dec mode : " << num_42 << endl;
 
+}
+
+void CheckChar(){
+    
+    char ch = 'M';
+    cout << "char : " << ch << endl;
+    int i = ch;
+    cout << "char in ASCII number : " << i << endl;
+    int i2 = 80;
+    char ch2 = i2;
+    cout << "80 in ASCII result : " << ch2 << endl;
+
+    char ch3 = 80;
+    cout << ch3 << endl;
+    string str(1, ch3);
+    cout << str << endl; 
+    cout << "type of str : " << typeid(str).name() << endl;
+    
+}
+
+void Exercise(){
+    
+    
+    long a = 31536000 % 86400;
+    cout << a << endl;
+
+    cout << "Please input the total times in second : " << endl;
+    long TotalSec;
+    cin >>  TotalSec;
+    cout << "Your input is : " << TotalSec << "!" << "\nStart to calculate the time in formal format..." << endl;
+    long day, hour, minute, second;
+    day = TotalSec / 86400;
+    hour = (TotalSec % 86400) / 3600;
+    minute = (TotalSec % 86400 % 3600) / 60;
+    second = TotalSec % 86400 % 3600 % 60;
+    cout << "Time you just input is represent as below : " << endl;
+    cout << day << " Days, " << hour << " Hours, " << minute << " Minutes, " << second << " Seconds." << endl;
+    
 }
