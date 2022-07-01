@@ -1,24 +1,15 @@
-class circle{
-public:
-
-    int radius;
-    int height;
-    int * height_p = new int;   // Remember, ALWAYS to new a pointer when declaring it instead of assigning a pointer for random existed value.
-    double girth;
-    double area;
-    double volume;
-    
-    void SetValue(int R, int H){
-        radius=R;
-        height=H;
-        
+class shape{
+    protected:
+    int area, girth;
+    public:
+    int get_girth(){
+        return girth;
     }
-    double GetVolume(){
-
-        volume=radius * radius * 3.14159 * height;
-        return volume;
-        
-    }
-
+    int get_area();
 };
+
+int shape :: get_area(){
+    return area;
+}
+
 
