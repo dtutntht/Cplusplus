@@ -1,0 +1,5 @@
+Your input keyword is : 
+Your input keyword is : good
+Your input keyword is : good
+Your input keyword is : ggood
+Your input keyword is : bad
