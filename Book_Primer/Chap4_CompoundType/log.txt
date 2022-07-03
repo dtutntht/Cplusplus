@@ -1,5 +1,9 @@
-Your input keyword is : 
-Your input keyword is : good
-Your input keyword is : good
-Your input keyword is : ggood
-Your input keyword is : bad
+Your input keyword is : I;m a good man.
+Your input keyword is : Hi I'm good!
+Your input keyword2 is : I'm really good!
+Your input keyword is : this is timmy!
+Your input keyword2 is : 
+Your input keyword is : Hi I'm TImmy!
+Your input keyword2 is : 
+Your input keyword is : hi im good
+Your input keyword2 is : really good
