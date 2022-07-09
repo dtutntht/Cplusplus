@@ -8,6 +8,9 @@
 #include <climits>
 void TestCin();
 void enumerate();
+void pointer_array();
+void pointer_char_string();
+char * pointer_new_delete();
 using namespace std; 
 
 int main(){
@@ -16,7 +19,19 @@ int main(){
     cout << "--------------------------------------" << endl;
     //TestCin();
     cout << "--------------------------------------" << endl;
-    enumerate();
+    //enumerate();
+    cout << "--------------------------------------" << endl;
+    pointer_array();
+    cout << "--------------------------------------" << endl;
+    pointer_char_string();
+    cout << "--------------------------------------" << endl;
+    char * catcher;
+    
+    catcher = pointer_new_delete();
+    cout << "catcher value is : " << catcher << endl;
+    cout << "catcher value is : " << (void *)catcher << endl;
+    //delete [] catcher;
+    cout << "--------------------------------------" << endl;
     sleep(1000);
 }
 
@@ -73,6 +88,49 @@ void enumerate (){
     sky1 = blue;
     cout << sky1 << endl;
 
+    
+}
 
+void pointer_array (){
+    short array_1[5] = {1,2,3,4,5};
+    short * p1 = array_1;
+    short * parray_2 = new short [5]{2,4,6,8,10};
+    cout << "array_1 #1 = " << *p1 << endl;
+    cout << "parray_2 #5 = " << parray_2[4] << endl;
+    cout << "parray_2 #5 = " << *(parray_2 + 4) << endl;
+    cout << "parray_2 #5 (error) = " << *parray_2 + 4 << "   --> It become to get value of first index and add 4 on this value, which is 2+4" << endl;
+    cout << "size of parray_2 = " << sizeof(&parray_2) << endl;
+    cout << "size of array_1 = " << sizeof(array_1) << endl;
+   
+}
+
+void pointer_char_string (){
+
+    const char * dog = "sunny";
+    cout << "dog is : " << dog << endl;
+    cout << "dog address is : " << &dog << "   --> This represent the address of \"the address of this pointer\", instead of address of string \"sunny\"" << endl;
+    cout << "dog is : " << (int *) dog << "   -->casting the pointer to other type like int, to show the address of value." << endl;
+   
+}
+
+char * pointer_new_delete (){
+    char temp[80] = "I can bare almost any how!";
+    cout << temp << endl;
+    char * pointer_correct  = new char;
+    strcpy(pointer_correct, temp);
+    char * pointer_fault;
+    pointer_fault=temp;
+    cout << "Correct pointer value : " << pointer_correct << endl;
+    cout << "Correct Pointer address : " << (void *) pointer_correct << endl;
+    cout << "Fault Pointer value : " << pointer_fault << endl;
+    cout << "Fault Pointer address : " << (void *) pointer_fault << endl;
+    cout << "*******************" << endl;
+    // You can try to return "pointer_correct" and "pointer_fault" to see the cout result at main function.
+    // pointer_correct's address is created by new, so it won't disappear after THIS function finished executed.
+    // pointer_fault's address is distributed in function with OOO=XXX, which will disappear after THIS function finished executed.
+    // Which cause the fault pointer's value can't be read properly when in main function!!
+    // (Due to the fault one isn't created by new, so it can't be DELETED by delete!!)
+    // THIS IS HOW C++ CONTROL THE MEMORY, REFER TO CHAP4, PAGE 182-183
+    return pointer_fault;
     
 }
