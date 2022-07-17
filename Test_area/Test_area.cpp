@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string.h>
-#include <windows.h>
+//#include <windows.h>
 #include <stdio.h>
 #include <string.h>
 #include <sys/types.h>
@@ -10,12 +10,12 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <time.h>
-// #include <termios.h>  This is for Linux
+#include <termios.h>  This is for Linux
 using namespace std; 
 
 
 
-
+/*
 int main ()
 {
     
@@ -37,5 +37,16 @@ int main ()
 
     Sleep(10000000);
 }
+*/
 
+int main(){
+	
+	if (5 % 4){
+		cout << "good" << endl;
+	} else {
+		cout << "bad" << endl;
+	}
+
+	
+}
 
